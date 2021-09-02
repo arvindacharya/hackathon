@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>NT Dashboard</title>
+  <link rel="icon" href="favicon.ico">
+  <meta charset="UTF-8">
+
+  <!-- css stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- lightweight charts api -->
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+</head>
+
+<body>
+  <div class="sidebar">
+    <ul class="nav-links">
+      <li>
+        <a href="#" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Northern Trust</span>
+        </a>
+      </li>
+      <li>
+        <!-- company symbol buttons -->
+          <div class="bnt-group">
+              <br><button class="btn ohlcbutton">AAPL</button>
+              <br><button class="btn ohlcbutton">MSFT</button>
+              <br><button class="btn ohlcbutton">GOOG</button>
+              <br><button class="btn ohlcbutton">GOOGL</button>
+              <br><button class="btn ohlcbutton">ADSK</button>
+              <br><button class="btn ohlcbutton">AMZN</button>
+              <br><button class="btn ohlcbutton">FB</button>
+              <br><button class="btn ohlcbutton">TSLA</button>
+              <br><button class="btn ohlcbutton">TSM</button>
+              <br><button class="btn ohlcbutton">NVDA</button>
+          </div>
+      </li>
+    </ul>
+  </div>
+  <!-- charts -->
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+    </nav>
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div id="chart">
+        </div>
+        <br><button class="btn CandleStick graphButton">CandleStick</button>
+        <button class="btn barChart graphButton">Bar Graph</button>
+        <script type="text/javascript" src="chart.js"></script>
+        <script src="candle.js">
+        </script>
+      </div>
+    </div>
+  </section>
+  <!-- sidebar -->
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function() {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>
+</body>
+</html>
